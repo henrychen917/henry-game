@@ -21,7 +21,7 @@ function draw(){
 var cursor = {x:0, y:0};
 $("#game-canves").click(function(){
 	if(cursor.x>0&&cursor.x<64&&curser.y>0&&curser.y<64){
-		isbuilding=true;
+		isBuilding=true;
 	}
 });
 setInterval(draw, 16)
