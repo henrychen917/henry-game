@@ -8,7 +8,7 @@ heroImg.src = "images/jason.gif";
 var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 var prinsessImg = document.createElement("img");
-prImg.src = "images/prinsess.png";
+prinsessImg.src = "images/prinsess.png";
 var hero = {
 	x: 0,
 	y: 0
