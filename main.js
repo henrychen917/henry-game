@@ -5,6 +5,8 @@ var bgImg = document.createElement("img");
 bgImg.src = "images/gamemap.png";
 var heroImg = document.createElement("img");
 heroImg.src = "images/jason.gif";
+var towerImg = document.createElement("img");
+towerImg.src = "images/tower-btn";
 
 var hero = {
 	x: 0,
@@ -12,8 +14,9 @@ var hero = {
 }
 
 function draw(){
-ctx.drawImage(bgImg,0,0);
+	ctx.drawImage(bgImg,0,0);
 	ctx.drawImage(heroImg, hero.x, hero.y);
+	ctx.drawImage(towerImg,0,0);
 }
 
 
