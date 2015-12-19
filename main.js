@@ -25,7 +25,3 @@ $("#game-canves").click(function(){
 	}
 });
 setInterval(draw, 16)
-$().mousemove()
-$( "#target" ).mousemove( function( event ) {
-console.log( "x: " + event.offsetX + ", y: " + event.offsetY );
-});
