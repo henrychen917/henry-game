@@ -18,7 +18,7 @@ function draw(){
 	ctx.drawImage(bgImg,0,0);
 	ctx.drawImage(heroImg, hero.x, hero.y);
 	ctx.drawImage(towerImg,0,0,64,64);
-	ctx.drawImage(redImg,600,0);
+	ctx.drawImage(redImg,400,0);
 }
 var cursor = {x:0, y:0};
 $("#game-canves").click(function(){
