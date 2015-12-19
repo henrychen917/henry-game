@@ -6,7 +6,7 @@ bgImg.src = "images/gamemap.png";
 var heroImg = document.createElement("img");
 heroImg.src = "images/jason.gif";
 var towerImg = document.createElement("img");
-towerImg.src = "images/tower-btn";
+towerImg.src = "images/tower-btn.png";
 
 var hero = {
 	x: 0,
