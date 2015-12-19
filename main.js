@@ -1,6 +1,6 @@
 var canvas = document.getElementById("game-canvas")
 var ctx = canvas.getContext("2d");
-
+var isBulding = false;
 var bgImg = document.createElement("img");
 bgImg.src = "images/gamemap.png";
 var heroImg = document.createElement("img");
@@ -18,6 +18,10 @@ function draw(){
 	ctx.drawImage(heroImg, hero.x, hero.y);
 	ctx.drawImage(towerImg,0,0,64,64);
 }
-
-
+var cursor = {x:0, y:0};
+$("#game-canves").click(function(){
+	if(cursor.x>0&&cursor.x<64&&curser.y>0&&curser.y<64){
+		isbuilding=true;
+	}
+});
 setInterval(draw, 16)
