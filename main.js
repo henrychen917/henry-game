@@ -3,7 +3,7 @@ var ctx = canvas.getContext("2d");
 
 var bgImg = document.createElement("img");
 bgImg.src = "images/gamemap.png";
-var heroImg = docment.createElement("img");
+var heroImg = document.createElement("img");
 heroImg.src = "images/jason.gif";
 
 var hero = {
