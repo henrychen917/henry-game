@@ -9,7 +9,7 @@ var towerImg = document.createElement("img");
 towerImg.src = "images/tower-btn.png";
 
 var hero = {
-	x: 250,
+	x: 0,
 	y: 0
 }
 
@@ -25,3 +25,7 @@ $("#game-canves").click(function(){
 	}
 });
 setInterval(draw, 16)
+$().mousemove()
+$( "#target" ).mousemove( function( event ) {
+console.log( "x: " + event.offsetX + ", y: " + event.offsetY );
+});
