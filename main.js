@@ -6,12 +6,8 @@ var cursor = {};
 var isBuilding = false;
 
 
-
-
-
-
 var bgImg = document.createElement("img");
-bgImg.src = "gamemap.png";
+bgImg.src = "images/gamemap.png";
 var buttonImg = document.createElement("img");
 buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
@@ -47,7 +43,6 @@ setInterval(draw, 1000/FPS);
 
 
 
-// ====== 其他函式 ====== //
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
