@@ -1,3 +1,15 @@
+var canvas = document.getElementById("game-canvas");
+var ctx = canvas.getContext("2d");
+
+var FPS = 60;
+var cursor = {};
+var isBuilding = false;
+
+
+
+
+
+
 var canvas = document.getElementById("game-canvas")
 var ctx = canvas.getContext("2d");
 var isBulding = false;
@@ -6,23 +18,48 @@ bgImg.src = "images/gamemap.png";
 var heroImg = document.createElement("img");
 heroImg.src = "images/jason.gif";
 var towerImg = document.createElement("img");
-towerImg.src = "images/tower-btn.png";
+towerImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
 
-var hero = {
-	x: 0,
-	y: 0
-}
+
+$("#game-canvas").mousemove(function(event) {
+    cursor = {
+        x: event.offsetX,
+        y: event.offsetY
+    };
+});
+
+$("#game-canvas").click(function(){
+    if( isCollided(cursor.x, cursor.y, 640-64, 480-64, 64, 64) ){
+        if (isBuilding) {
+            isBuilding = false;
+        } else {
+            isBuilding = true;
+        }
+    }
+});
 
 function draw(){
-	ctx.drawImage(bgImg,0,0);
-	ctx.drawImage(heroImg, hero.x, hero.y);
-	ctx.drawImage(towerImg,0,0,64,64);
-	
+    ctx.drawImage(bgImg,0,0);
+    ctx.drawImage(buttonImg, 640-64, 480-64, 64, 64);
+    if(isBuilding){
+        ctx.drawImage(towerImg, cursor.x, cursor.y);
+    }
 }
-var cursor = {x:0, y:0};
-$("#game-canves").click(function(){
-	if(cursor.x>0&&cursor.x<64&&curser.y>0&&curser.y<64){
-		isBuilding=true;
-	}
-});
-setInterval(draw, 16)
+
+setInterval(draw, 1000/FPS);
+
+
+
+// ====== 其他函式 ====== //
+
+function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
+    if(     pointX >= targetX
+        &&  pointX <= targetX + targetWidth
+        &&  pointY >= targetY
+        &&  pointY <= targetY + targetHeight
+    ){
+        return true;
+    } else {
+        return false;
+    }
+}
