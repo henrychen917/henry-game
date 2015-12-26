@@ -10,15 +10,12 @@ var isBuilding = false;
 
 
 
-var canvas = document.getElementById("game-canvas")
-var ctx = canvas.getContext("2d");
-var isBulding = false;
 var bgImg = document.createElement("img");
-bgImg.src = "images/gamemap.png";
-var heroImg = document.createElement("img");
-heroImg.src = "images/jason.gif";
+bgImg.src = "gamemap.png";
+var buttonImg = document.createElement("img");
+buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
-towerImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
+towerImg.src = "Decoration_goldenturd_thumbnail@2x.png";
 
 
 $("#game-canvas").mousemove(function(event) {
