@@ -35,7 +35,7 @@ function draw(){
     ctx.drawImage(bgImg,0,0);
     ctx.drawImage(buttonImg, 640-64, 480-64, 64, 64);
     if(isBuilding){
-        ctx.drawImage(towerImg, cursor.x, cursor.y);
+        ctx.drawImage(towerImg, cursor.x, cursor.y , 64 , 64);
     }
 }
 
