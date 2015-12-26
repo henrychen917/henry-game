@@ -11,7 +11,9 @@ bgImg.src = "images/gamemap.png";
 var buttonImg = document.createElement("img");
 buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
-towerImg.src = "Decoration_goldenturd_thumbnail@2x.png";
+towerImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
+var panImg = document.createElement("img");
+towerImg.src = "images/c_frying_pan_gold_large.1198945aaa4f8544f7f372d4dfb15228f0b6f9b5.png";
 
 
 $("#game-canvas").mousemove(function(event) {
