@@ -13,7 +13,7 @@ buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
 towerImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
 var panImg = document.createElement("img");
-towerImg.src = "images/c_frying_pan_gold_large.1198945aaa4f8544f7f372d4dfb15228f0b6f9b5.png";
+panImg.src = "images/c_frying_pan_gold_large.1198945aaa4f8544f7f372d4dfb15228f0b6f9b5.png";
 
 
 $("#game-canvas").mousemove(function(event) {
