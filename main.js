@@ -48,7 +48,7 @@ var enemyPath = [
 
 // ====== 引入圖檔 ====== //
 var bgImg = document.createElement("img");
-bgImg.src = "images/mapddd.png";
+bgImg.src = "images/mapabc.png";
 var buttonImg = document.createElement("img");
 buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
