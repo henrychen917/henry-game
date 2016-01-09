@@ -24,9 +24,9 @@ bgImg.src = "images/gamemap.png";
 var buttonImg = document.createElement("img");
 buttonImg.src = "images/tower-btn.png";
 var towerImg = document.createElement("img");
-towerImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
+towerImg.src = "images/c_frying_pan_gold_large.1198945aaa4f8544f7f372d4dfb15228f0b6f9b5.png";
 var slimeImg = document.createElement("img");
-slimeImg.src = "images/slime.gif";
+slimeImg.src = "images/Decoration_goldenturd_thumbnail@2x.png";
 var panImg = document.createElement("img");
 panImg.src = "images/c_frying_pan_gold_large.1198945aaa4f8544f7f372d4dfb15228f0b6f9b5.png";
 // ==================== //
@@ -57,8 +57,8 @@ function draw(){
 
     ctx.drawImage(bgImg,0,0);
     ctx.drawImage(buttonImg, 640-64, 480-64, 64, 64);
-    ctx.drawImage(towerImg, tower.x, tower.y);
-    ctx.drawImage(slimeImg, enemy.x, enemy.y);
+    ctx.drawImage(towerImg, tower.x, tower.y, 32,32);
+    ctx.drawImage(slimeImg, enemy.x, enemy.y , 32 ,32);
     if(isBuilding){
         ctx.drawImage(towerImg, cursor.x, cursor.y);
     }
