@@ -57,8 +57,8 @@ function draw(){
 
     ctx.drawImage(bgImg,0,0);
     ctx.drawImage(buttonImg, 640-64, 480-64, 64, 64);
-    ctx.drawImage(towerImg, tower.x, tower.y, 32,32);
-    ctx.drawImage(slimeImg, enemy.x, enemy.y , 32 ,32);
+    ctx.drawImage(towerImg, tower.x, tower.y, 64,64);
+    ctx.drawImage(slimeImg, enemy.x, enemy.y , 64 ,64);
     if(isBuilding){
         ctx.drawImage(towerImg, cursor.x, cursor.y);
     }
