@@ -1,18 +1,23 @@
 var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
-
+var clock = 0;
 var FPS = 60;
 var cursor = {};
 var isBuilding = false;
 var tower = {};
-var enemy = { 
-    x:96, 
-    y:480-32,
-    direction:{x:0,y:-1},
-    speed:64,
-    pathDes: 0,
-    move: function(){
+var enemy = new Enemy();
+
+function Enemy() {
+this.x = 96; 
+this.y = 480-32;
+this.direction = {x:0,y:-1};
+this.speed = 64;
+this.pathDes = 0;
+this.move =  function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
+}
+
+    
 
        
             this.x = enemyPath[this.pathDes].x;
@@ -79,7 +84,13 @@ $("#game-canvas").click(function(){
 });
 
 function draw(){
-
+    
+    if ((clock%80)==0){
+        var newEnemy=new Enemy();
+        enemies.push(newEnemy);
+        
+        
+    }
     enemy.move();
 
     ctx.drawImage(bgImg,0,0);
