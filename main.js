@@ -2,52 +2,38 @@ var canvas = document.getElementById("game-canvas");
 var ctx = canvas.getContext("2d");
 
 var FPS = 60;
-var clock = 0;
 var cursor = {};
 var isBuilding = false;
 var tower = {};
-var enemies = [];
-
-function Enemy() { 
-    this.x = 96; 
-    this.y = 480-32;
-    this.direction = {x:0,y:-1};
-    this.speed = 64;
-    this.pathDes = 0;
-    this.move = function(){
+var enemy = { 
+    x:96, 
+    y:480-32,
+    direction:{x:0,y:-1},
+    speed:64,
+    pathDes: 0,
+    move: function(){
         if( isCollided(enemyPath[this.pathDes].x, enemyPath[this.pathDes].y, this.x, this.y, this.speed/FPS, this.speed/FPS) ){
 
-           
+            // 首先，移動到下一個路徑點
             this.x = enemyPath[this.pathDes].x;
             this.y = enemyPath[this.pathDes].y;
 
-          
+            // 指定下一個路徑點
             this.pathDes++;
 
-          
+            // 取得前往下一個路徑點的單位向量
             var unitVector = getUnitVector( this.x, this.y, enemyPath[this.pathDes].x, enemyPath[this.pathDes].y );
             this.direction.x = unitVector.x;
             this.direction.y = unitVector.y;
 
         } else {
-        
+            // this.x += this.direction.x * this.speed/FPS;
             this.x = this.x + this.direction.x * this.speed/FPS;
-
+            // this.y += this.direction.y * this.speed/FPS;
             this.y = this.y + this.direction.y * this.speed/FPS;
         }
-    };
-}
-
-
-var enemyPath = [
-    {x:96, y:64},
-    {x:384, y:64},
-    {x:384, y:192},
-    {x:224, y:192},
-    {x:224, y:320},
-    {x:544, y:320},
-    {x:544, y:96}
-];
+    }
+};
 
 var enemyPath = [
     {x:96, y:64},
@@ -58,8 +44,6 @@ var enemyPath = [
     {x:544, y:320},
     {x:544, y:96}
 ];
-
-
 
 var bgImg = document.createElement("img");
 bgImg.src = "images/mapaaa.png";
@@ -96,30 +80,22 @@ $("#game-canvas").click(function(){
 
 function draw(){
 
-    if(clock%80==0){
-        enemies.push(new Enemy());
-    }
+    enemy.move();
 
     ctx.drawImage(bgImg,0,0);
     ctx.drawImage(buttonImg, 640-64, 480-64, 64, 64);
-    ctx.drawImage(towerImg, tower.x, tower.y , 32, 32);
+    ctx.drawImage(towerImg, tower.x, tower.y);
+    ctx.drawImage(slimeImg, enemy.x, enemy.y);
     if(isBuilding){
-        ctx.drawImage(towerImg, cursor.x, cursor.y , 32 ,32);
+        ctx.drawImage(towerImg, cursor.x, cursor.y);
     }
-
-    for(var i=0; i<enemies.length; i++){
-        enemies[i].move();
-        ctx.drawImage( slimeImg, enemies[i].x, enemies[i].y);
-    }
-
-    clock++;
 }
 
 setInterval(draw, 1000/FPS);
 
 
 
-
+// ====== 其他函式 ====== //
 
 function isCollided(pointX, pointY, targetX, targetY, targetWidth, targetHeight) {
     if(     pointX >= targetX
@@ -144,7 +120,6 @@ function getUnitVector(srcX, srcY, targetX, targetY) {
     };
     return unitVector;
 }
-
 //happy happy happy happy happy  happy happy happy happy happy happy happy happy happy happy
 //happy happy happy happy happy  happy happy happy happy happy happy happy happy happy happy
 //happy happy happy happy happy  happy happy happy happy happy happy happy happy happy happy
